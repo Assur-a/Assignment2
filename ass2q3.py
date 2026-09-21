@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.datasets import load_wine
 
-# Load Wine dataset
+
 wine = load_wine()
 
 df = pd.DataFrame(
@@ -17,7 +17,7 @@ correlation_matrix = df.corr()
 print("--- Correlation Matrix ---")
 print(correlation_matrix)
 
-# Plot heatmap
+
 plt.figure(figsize=(12, 9))
 
 sns.heatmap(
@@ -31,14 +31,12 @@ plt.title("Wine Dataset Correlation Heatmap")
 plt.tight_layout()
 plt.show()
 
-# Find strongest positive correlation
+
 corr = correlation_matrix.copy()
 
-# Remove self-correlations
 for i in range(len(corr.columns)):
     corr.iloc[i, i] = 0
 
-# Find maximum positive correlation
 max_corr = corr.stack().idxmax()
 max_value = corr.stack().max()
 
