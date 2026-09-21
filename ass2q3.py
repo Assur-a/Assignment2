@@ -11,7 +11,7 @@ df = pd.DataFrame(
     columns=wine.feature_names
 )
 
-# Calculate correlation matrix
+
 correlation_matrix = df.corr()
 
 print("--- Correlation Matrix ---")
