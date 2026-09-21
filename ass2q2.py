@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.datasets import load_wine
 
-# Load dataset
+
 wine = load_wine()
 
 df = pd.DataFrame(
@@ -10,7 +10,7 @@ df = pd.DataFrame(
     columns=wine.feature_names
 )
 
-# Create boxplots
+
 plt.figure(figsize=(15, 8))
 
 df.boxplot()
